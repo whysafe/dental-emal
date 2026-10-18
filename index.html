@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Эмаль — стоматология с понятными ценами</title>
+<meta name="description" content="Лечение, имплантация и гигиена зубов. Посчитайте стоимость лечения онлайн и оформите рассрочку без переплаты.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Commissioner:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0F4C5C;--teal-2:#176B7E;--mist:#E6F2F1;--mint:#4FB3A9;--ink:#13252B;--muted:#5E7177;--line:#D3E3E2;--err:#B7372B}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 Commissioner,system-ui,sans-serif;color:var(--ink);background:#fff}
+h1,h2,h3{font-family:Literata,Georgia,serif;font-weight:700;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.2rem,5vw,3.8rem)}
+h2{font-size:clamp(1.7rem,3.5vw,2.5rem)}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+.btn{display:inline-block;border:0;border-radius:10px;padding:.85em 1.5em;background:var(--teal);color:#fff;font:600 1rem Commissioner,sans-serif;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--teal-2)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 0}
+.logo{font:700 1.5rem Literata,serif;color:var(--teal);text-decoration:none}
+.top nav{display:flex;gap:1.4rem}
+.top nav a{text-decoration:none;color:var(--muted)}
+.hero{background:var(--mist);border-radius:28px;padding:clamp(2rem,6vw,4.5rem);display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:center}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:30em}
+.guarantees{list-style:none;padding:0;margin:0;display:grid;gap:1rem}
+.guarantees li{background:#fff;border-radius:16px;padding:1rem 1.2rem}
+.guarantees b{display:block;font:700 1.15rem Literata,serif;color:var(--teal)}
+section{padding:clamp(3.5rem,8vw,5.5rem) 0}
+.lead{color:var(--muted);max-width:42em;font-size:1.1rem}
+
+.estimator{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;align-items:start;margin-top:2rem}
+.group{margin-bottom:1.5rem}
+.group h3{font-size:1.2rem;color:var(--teal)}
+.svc{display:grid;grid-template-columns:auto 1fr auto auto;gap:1rem;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--line)}
+.svc input[type=checkbox]{width:20px;height:20px;accent-color:var(--teal)}
+.svc .p{font-weight:600;white-space:nowrap}
+.svc .n{display:flex;align-items:center;gap:.3rem}
+.svc .n button{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.svc .n output{min-width:1.6em;text-align:center}
+.svc.off .n{visibility:hidden}
+.bill{background:var(--teal);color:#fff;border-radius:22px;padding:1.8rem;position:sticky;top:1.5rem}
+.bill h3{color:#fff}
+.bill ul{list-style:none;padding:0;margin:0 0 1rem;font-size:.95rem}
+.bill li{display:flex;justify-content:space-between;gap:1rem;padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.15)}
+.bill .sum{font:700 2rem Literata,serif;margin:.5rem 0}
+.plans{display:flex;gap:.4rem;margin:1rem 0}
+.plans button{flex:1;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:10px;padding:.5em;cursor:pointer;font:inherit}
+.plans button[aria-pressed="true"]{background:#fff;color:var(--teal)}
+.monthly{font-size:1.2rem}
+.bill .btn{background:#fff;color:var(--teal);width:100%;text-align:center;margin-top:1rem}
+.bill small{opacity:.75}
+
+.doctors{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2rem}
+.doc{border:1px solid var(--line);border-radius:20px;padding:1.5rem}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--mist);color:var(--teal);display:grid;place-items:center;font:700 1.6rem Literata,serif;margin-bottom:1rem}
+.doc h3{font-size:1.2rem;margin:0}
+.doc p{margin:.2rem 0;color:var(--muted)}
+
+details{border-bottom:1px solid var(--line);padding:1rem 0;max-width:800px}
+summary{cursor:pointer;font-weight:600;font-size:1.1rem}
+details p{color:var(--muted);margin:.5rem 0 0}
+
+#appointment{background:var(--mist)}
+.appt{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.form{display:grid;gap:.9rem}
+.form label{display:grid;gap:.3rem;font-size:.9rem;color:var(--muted)}
+.form input,.form select{font:inherit;padding:.8em 1em;border:1px solid var(--line);border-radius:10px;background:#fff;width:100%}
+.form [aria-invalid="true"]{border-color:var(--err)}
+.urgent{background:#fff;border-left:5px solid var(--err);border-radius:10px;padding:1rem;margin-top:1rem}
+.err{color:var(--err);font-weight:600;min-height:1.3em;margin:0}
+.ok{background:#fff;border-radius:16px;padding:1.5rem;border-left:5px solid var(--mint)}
+footer{padding:2rem 0;color:var(--muted);font-size:.9rem}
+
+@media (max-width:860px){
+  .hero,.estimator,.appt{grid-template-columns:1fr}
+  .top nav{display:none}
+  .bill{position:static}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.estimator>*{min-width:0}.svc>span{min-width:0}@media(max-width:480px){.svc{gap:.55rem;grid-template-columns:auto 1fr auto}.svc .n{grid-column:2}.svc .p{grid-column:3;grid-row:1}.svc .n:empty,.svc.off .n{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#">Эмаль</a>
+    <nav><a href="#prices">Цены</a><a href="#doctors">Врачи</a><a href="#faq">Вопросы</a></nav>
+    <a class="btn" href="#appointment">Записаться</a>
+  </header>
+  <section class="hero" style="padding-top:clamp(2rem,6vw,4.5rem)">
+    <div>
+      <h1>Сначала план и цена, потом лечение</h1>
+      <p>На первом приёме делаем снимок, показываем его вам и расписываем план лечения с итоговой суммой. Она не меняется, пока план не меняется.</p>
+      <a class="btn" href="#prices">Посчитать стоимость</a>
+    </div>
+    <ul class="guarantees">
+      <li><b>Цена фиксируется в договоре</b>Без доплат «по ходу» лечения</li>
+      <li><b>Рассрочка 0% до 12 месяцев</b>Без банка и первого взноса</li>
+      <li><b>Гарантия до 10 лет</b>На импланты и коронки</li>
+    </ul>
+  </section>
+</div>
+
+<section id="prices">
+  <div class="wrap">
+    <h2>Калькулятор лечения</h2>
+    <p class="lead">Отметьте, что нужно, и посмотрите итог и платёж в рассрочку. Точный план врач составит после осмотра.</p>
+    <div class="estimator">
+      <div id="groups"></div>
+      <aside class="bill" aria-live="polite">
+        <h3>Предварительный расчёт</h3>
+        <ul id="billList"></ul>
+        <small>Итого</small>
+        <p class="sum" id="billSum">0 ₽</p>
+        <div class="plans" role="group" aria-label="Срок рассрочки">
+          <button type="button" data-months="1" aria-pressed="true">Сразу</button>
+          <button type="button" data-months="6" aria-pressed="false">6 мес</button>
+          <button type="button" data-months="12" aria-pressed="false">12 мес</button>
+        </div>
+        <p class="monthly" id="monthly"></p>
+        <a class="btn" href="#appointment">Записаться на консультацию</a>
+        <small>Консультация и снимок бесплатно при лечении.</small>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="doctors" style="padding-top:0">
+  <div class="wrap">
+    <h2>Врачи</h2>
+    <div class="doctors" id="doctorList"></div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <h2>Частые вопросы</h2>
+    <details><summary>Будет больно?</summary><p>Используем современную анестезию, а укол делаем после аппликационного обезболивания. Большинство пациентов говорят, что почувствовали только давление.</p></details>
+    <details><summary>Как работает рассрочка?</summary><p>Клиника сама даёт рассрочку без банка. Делим сумму на равные платежи, первый вносится в день лечения. Переплаты нет.</p></details>
+    <details><summary>Можно ли с ребёнком?</summary><p>Да, детский врач принимает по субботам. Первый визит знакомство: смотрим зубы и учим чистить.</p></details>
+  </div>
+</section>
+
+<section id="appointment">
+  <div class="wrap appt">
+    <div>
+      <h2>Запись на приём</h2>
+      <p class="lead">Перезвоним в течение 10 минут в рабочее время и подберём удобное окно.</p>
+      <p>Москва, Ленинский проспект, 64<br>Ежедневно 9:00–21:00<br><a href="tel:+74950000003">+7 495 000-00-03</a></p>
+    </div>
+    <form class="form" id="apptForm" novalidate>
+      <label>Что беспокоит?
+        <select name="reason" id="reason">
+          <option>Профилактический осмотр</option>
+          <option>Чистка и гигиена</option>
+          <option>Кариес, пломба</option>
+          <option value="pain">Острая боль</option>
+          <option>Имплантация</option>
+          <option>Брекеты, элайнеры</option>
+        </select>
+      </label>
+      <div class="urgent" id="urgent" hidden><b>При острой боли примем сегодня.</b> Позвоните, чтобы не ждать перезвона: <a href="tel:+74950000003">+7 495 000-00-03</a></div>
+      <label>Имя<input name="name" autocomplete="name"></label>
+      <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"></label>
+      <label>Врач<select name="doctor" id="docSelect"><option>Любой свободный</option></select></label>
+      <p class="err" id="apptErr" role="alert"></p>
+      <button class="btn" type="submit">Записаться на приём</button>
+    </form>
+  </div>
+</section>
+<footer><div class="wrap">© Клиника «Эмаль». Имеются противопоказания, необходима консультация специалиста.</div></footer>
+
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rub = n => Math.round(n).toLocaleString('ru-RU') + ' ₽';
+const GROUPS = {
+  'Диагностика и гигиена': [['xray','Панорамный снимок',2200,false],['clean','Профессиональная чистка',6500,false],['consult','Консультация врача',0,false]],
+  'Лечение': [['caries','Лечение кариеса с пломбой',7900,true],['canal','Лечение каналов (1 зуб)',18500,true],['extract','Удаление зуба',4500,true]],
+  'Протезирование': [['implant','Имплант под ключ',72000,true],['crown','Коронка из диоксида циркония',32000,true],['veneer','Керамический винир',38000,true]],
+  'Ортодонтия': [['aligners','Элайнеры, курс',220000,false],['braces','Брекеты, обе челюсти',145000,false]]
+};
+const DOCTORS = [
+  ['Ирина Ковалёва','Терапевт','Стаж 14 лет','Лечение кариеса и каналов под микроскопом'],
+  ['Андрей Мельников','Хирург-имплантолог','Стаж 17 лет','Более 3 000 установленных имплантов'],
+  ['Наталья Орлова','Ортодонт','Стаж 11 лет','Элайнеры и брекеты для взрослых'],
+  ['Павел Сидоров','Ортопед','Стаж 9 лет','Коронки, виниры, протезы на имплантах']
+];
+const picked = {};   // id -> количество
+let months = 1;
+
+$('#groups').innerHTML = Object.entries(GROUPS).map(([g, list]) => `<div class="group"><h3>${g}</h3>${list.map(([id, name, price, perTooth]) => `
+  <label class="svc off" data-id="${id}">
+    <input type="checkbox" data-pick="${id}">
+    <span>${name}</span>
+    <span class="n">${perTooth ? `<button type="button" data-minus="${id}" aria-label="Меньше зубов">−</button><output id="n-${id}">1</output><button type="button" data-plus="${id}" aria-label="Больше зубов">+</button>` : ''}</span>
+    <span class="p">${price ? rub(price) : 'бесплатно'}</span>
+  </label>`).join('')}</div>`).join('');
+
+const ALL = Object.values(GROUPS).flat();
+function render(){
+  const lines = Object.entries(picked).map(([id, n]) => { const s = ALL.find(x => x[0] === id); return [s[1] + (s[3] ? ` × ${n}` : ''), s[2] * n]; });
+  const total = lines.reduce((a, [, v]) => a + v, 0);
+  $('#billList').innerHTML = lines.length ? lines.map(([n, v]) => `<li><span>${n}</span><span>${v ? rub(v) : '0 ₽'}</span></li>`).join('') : '<li>Отметьте услуги слева</li>';
+  $('#billSum').textContent = rub(total);
+  $('#monthly').textContent = total && months > 1 ? `${rub(total / months)} в месяц, ${months} платежей` : total ? 'Оплата в день лечения' : '';
+}
+document.addEventListener('change', e => {
+  const id = e.target.dataset.pick; if (!id) return;
+  const row = e.target.closest('.svc');
+  if (e.target.checked) picked[id] = +($('#n-' + id)?.value || 1); else delete picked[id];
+  row.classList.toggle('off', !e.target.checked); render();
+});
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const id = b.dataset.plus || b.dataset.minus;
+  if (id){ e.preventDefault(); const out = $('#n-' + id); let n = +out.value + (b.dataset.plus ? 1 : -1); n = Math.min(32, Math.max(1, n)); out.value = n; if (picked[id]) picked[id] = n; render(); }
+  if (b.dataset.months){ months = +b.dataset.months; $$('[data-months]').forEach(x => x.setAttribute('aria-pressed', x === b)); render(); }
+});
+$$('output').forEach(o => o.value = 1);
+
+$('#doctorList').innerHTML = DOCTORS.map(([n, role, exp, txt]) => `<article class="doc"><div class="avatar" aria-hidden="true">${n.split(' ').map(w => w[0]).join('')}</div><h3>${n}</h3><p><b>${role}</b>, ${exp.toLowerCase()}</p><p>${txt}</p></article>`).join('');
+$('#docSelect').innerHTML += DOCTORS.map(([n, role]) => `<option>${n}, ${role.toLowerCase()}</option>`).join('');
+
+$('#reason').addEventListener('change', e => { $('#urgent').hidden = e.target.value !== 'pain'; });
+const form = $('#apptForm'), phone = form.phone;
+phone.addEventListener('input', () => { let d = phone.value.replace(/\D/g,''); if (d[0] === '8') d = '7' + d.slice(1); if (d[0] !== '7') d = '7' + d; d = d.slice(0, 11);
+  let o = '+7'; if (d.length > 1) o += ' (' + d.slice(1,4); if (d.length > 4) o += ') ' + d.slice(4,7); if (d.length > 7) o += '-' + d.slice(7,9); if (d.length > 9) o += '-' + d.slice(9); phone.value = o; });
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const okName = form.name.value.trim().length >= 2, okPhone = phone.value.replace(/\D/g,'').length === 11;
+  form.name.setAttribute('aria-invalid', !okName); phone.setAttribute('aria-invalid', !okPhone);
+  if (!okName || !okPhone){ $('#apptErr').textContent = !okName ? 'Укажите имя.' : 'Проверьте телефон: нужно 11 цифр.'; return; }
+  form.innerHTML = `<div class="ok"><h3 style="margin:0">Заявка принята</h3><p style="margin:.4rem 0 0">${esc(form.name.value.trim())}, администратор перезвонит на ${esc(phone.value)} и предложит время. ${Object.keys(picked).length ? 'Ваш расчёт из калькулятора мы приложили к заявке.' : ''}</p></div>`;
+});
+render();
+</script>
+</body>
+</html>
